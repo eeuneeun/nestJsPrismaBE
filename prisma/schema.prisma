@@ -14,33 +14,35 @@ datasource db {
 }
 
 model User {
-  id    Int     @default(autoincrement()) @id
-  name  String  @unique 
+  id   Int    @id @default(autoincrement())
+  name String @unique
+  Room Room?
 }
 
-model Algorithm {
-  id        Int      @default(autoincrement()) @id
-  originLink String
-  title     String
-  condition String
-  contents   String
-  evaluateInput String
+model Problem {
+  id             Int    @id @default(autoincrement())
+  originLink     String
+  title          String
+  condition      String
+  contents       String
+  evaluateInput  String
   evaluateOutput String
-  grade Int
-  viewCount Int
-  rooms Room[]
+  grade          Int
+  viewCount      Int
+  Room           Room?
 }
-
 
 model Room {
-  id    Int     @default(autoincrement()) @id
-  manager  String  @unique
-  title String
-  maxAttend Int
+  id         Int     @id @default(autoincrement())
+  manager    String  @unique
+  title      String
+  maxAttend  Int
   generateAt Int
-  expireAt Int
+  expireAt   Int
   difficulty Int
-  roomLink String
-  algorithmId Algorithm @relation(fields: [roomId], references: [id])
-  roomId Int
+  roomLink   String
+  problem    Problem @relation(fields: [problemId], references: [id])
+  problemId  Int     @unique
+  owner      User    @relation(fields: [ownerId], references: [id])
+  ownerId    Int     @unique
 }
