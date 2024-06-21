@@ -9,11 +9,11 @@ import { Problem, Prisma } from '@prisma/client';
 export class ProblemService {
   constructor(private prisma: PrismaService) {}
 
-  create(createProblemDto: CreateProblemDto): Promise<Problem | null>{
+  create(){
+  // create(createProblemDto: CreateProblemDto): Promise<Problem | null>{
     console.log('This action adds a new problem');
-    return this.prisma.problem.create({
-      createProblemDto,
-    });
+    // return this.prisma.problem.create({
+    // });
   }
 
   findAll() {

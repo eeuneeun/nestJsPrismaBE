@@ -4,11 +4,14 @@ import { AppService } from './app.service';
 import { EventsModule } from './events/events.module';
 import { CrawlerModule } from './crawler/crawler.module';
 import { LoggerMiddleware } from './logger.middleware';
-import { ProblemModule } from './problem/problem.module';
+// import { ProblemModule } from './problem/problem.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    EventsModule, CrawlerModule, ProblemModule
+    EventsModule, 
+    CrawlerModule, AuthModule, UsersModule, 
   ],
   controllers: [AppController],
   providers: [AppService],

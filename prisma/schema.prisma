@@ -19,17 +19,29 @@ model User {
   Room Room?
 }
 
-model Problem {
-  id             Int    @id @default(autoincrement())
-  originLink     String
-  title          String
-  condition      String
-  contents       String
-  evaluateInput  String
-  evaluateOutput String
-  grade          Int
-  viewCount      Int
-  Room           Room?
+
+model Problem{
+  id   Int    @id @default(autoincrement())
+  title String
+  timeLimit String
+  memoryLimit String
+  tryCount String
+  passCount String
+  peopleCount String
+  difficulty String
+  description String
+  problemInput String?
+  problemOutput String?
+  problemLimit String?
+  sampleInput String?
+  sampleOutput String?
+  sampleInput2 String?
+  sampleOutput2 String?
+  sampleInput3 String?
+  sampleOutput3 String?
+  source String?
+  link String
+  room Room[]
 }
 
 model Room {

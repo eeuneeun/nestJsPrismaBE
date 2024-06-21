@@ -9,7 +9,7 @@ export class ProblemController {
 
   @Post()
   create(@Body() createProblemDto: CreateProblemDto) {
-    return this.problemService.create(createProblemDto);
+    return this.problemService.create();
   }
 
   @Get()
