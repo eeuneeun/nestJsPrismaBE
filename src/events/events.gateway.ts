@@ -18,15 +18,16 @@ import {
     @WebSocketServer()
     server: Server;
   
-    @SubscribeMessage('events')
+    @SubscribeMessage('test')
     findAll(@MessageBody() data: any): Observable<WsResponse<number>> {
       console.log(data)
-      return from([1, 2, 3]).pipe(map(item => ({ event: 'events', data: item })));
+      return from([1, 2, 3]).pipe(map(item => ({ event: 'chat', data: item })));
     }
   
-    @SubscribeMessage('identity')
-    async identity(@MessageBody() data: number): Promise<number> {
+    // TOPIC FOR CHAT
+    @SubscribeMessage('chat')
+    async identity(@MessageBody() data: any): Promise<any> {
       console.log(data)
-      return data;
+      return ({ event: 'chat', data: data });
     }
   }

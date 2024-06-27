@@ -5,7 +5,7 @@ import { globalLogger } from './logger.middleware';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   // app.use(globalLogger);
-  await app.listen(3001);
+  await app.listen(8080);
   
   console.log(`Coding_Us 실행 URL : ${await app.getUrl()}`);
 }

@@ -11,7 +11,9 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     EventsModule, 
-    CrawlerModule, AuthModule, UsersModule, 
+    CrawlerModule, 
+    AuthModule, 
+    UsersModule, 
   ],
   controllers: [AppController],
   providers: [AppService],

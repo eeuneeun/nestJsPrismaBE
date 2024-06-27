@@ -15,7 +15,9 @@ import {
     async canActivate(context: ExecutionContext): Promise<boolean> {
       const request = context.switchToHttp().getRequest();
       const token = this.extractTokenFromHeader(request);
+      
       if (!token) {
+        // 익명 토큰 생성
         throw new UnauthorizedException();
       }
       try {
