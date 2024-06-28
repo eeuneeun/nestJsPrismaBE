@@ -11,7 +11,7 @@ export class RoomController {
   @Post()
   create(@Body() data: Prisma.RoomCreateInput) {
     console.log(data)
-    return this.roomService.create(data);
+    return this.roomService.createRoom(data);
   }
 
   @Get()

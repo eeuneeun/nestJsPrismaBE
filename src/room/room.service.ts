@@ -16,7 +16,7 @@ export class RoomService {
     });
   }
 
-  async create(data: Prisma.RoomCreateInput) :Promise<Room>{
+  async createRoom(data: Prisma.RoomCreateInput) :Promise<Room>{
     return this.prisma.room.create({
       data
     });
