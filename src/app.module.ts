@@ -7,13 +7,14 @@ import { LoggerMiddleware } from './logger.middleware';
 // import { ProblemModule } from './problem/problem.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { RoomModule } from './room/room.module';
 
 @Module({
   imports: [
     EventsModule, 
     CrawlerModule, 
     AuthModule, 
-    UsersModule, 
+    UsersModule, RoomModule, 
   ],
   controllers: [AppController],
   providers: [AppService],
